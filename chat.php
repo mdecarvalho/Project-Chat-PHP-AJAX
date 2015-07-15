@@ -1,6 +1,6 @@
 <?php
 //requête pour récupérer les 10 derniers messages
-$sql = 'SELECT login, message, DATE_FORMAT(date, \'%d/%m/%Y à %Hh%imin%ss\') AS date_fr FROM message ORDER BY ID DESC LIMIT 0, 10';
+$sql = 'SELECT login, message, DATE_FORMAT(date, \'%d/%m/%Y à %Hh%imin%ss\') AS date_fr FROM message, user WHERE user.id_user=message.id_user LIMIT 0, 10';
 
 //Envoi de la requête
 $requete = mysql_query($sql) or die('Erreur affichage messages <br>'.$sql.'<br>'.mysql_error());
