@@ -5,8 +5,16 @@
     <title>CHAT</title>
 </head>
 <body>
-    <form action="" method="post">
-        <label>Pseudo<input type="text"></label>
+    <form action="index.php" method="post">
+        <label>
+            Pseudo:
+            <?php
+                $pseudo = "test";
+                echo $pseudo;            
+            ?>
+            <input type="text" name="chat-message"  maxlength="500">
+            <INPUT type="submit" name="submit-button" id="submit-button" value="Envoyer">
+        </label>
     </form>
 </body>
 </html>
