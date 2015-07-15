@@ -29,6 +29,7 @@ if ($loginOK) {
   $_SESSION['id_user'] = $data['id_user'];
   $_SESSION['login'] = $data['login'];
   $_SESSION['statut'] = $data['status'];
+  header ('location: index.php'); //rediirection vers la page de tchat
 }
 else {
   echo 'Une erreur est survenue, veuillez réessayer !'; 
