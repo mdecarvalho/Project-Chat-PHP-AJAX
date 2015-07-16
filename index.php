@@ -15,11 +15,10 @@
                 Pseudo:
                 <?php
                     session_start();
-                    $pseudo = $_SESSION['login'];
+                   $pseudo = $_SESSION['login'];
                     echo $pseudo;            
                 ?>
             </label>
-            
             <textarea rows="4" cols="50" placeholder="Saisissez votre message" id="message"></textarea>
             <INPUT type="submit" name="submit-button" id="submit-button" value="Envoyer">
         </section><!-- message.section -->

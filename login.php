@@ -1,6 +1,6 @@
 <html>
     <body>
-        <form action="verifLogin.php" method="post">
+        <form action="verifLogin.php" method="POST">
             <label>Login:</label>
             <input type="name" name="login"/><br>
             <label>password:</label>
