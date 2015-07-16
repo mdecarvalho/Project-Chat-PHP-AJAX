@@ -6,6 +6,9 @@
     <link rel="stylesheet" type="text/css" href="css/main.css"/> 
 </head>
 <body>
+    <?php require_once("chat.php");
+    ?>
+    
     <form action="index.php" method="post">
         <section id="message-section">
             <label>
@@ -19,5 +22,6 @@
             <INPUT type="submit" name="submit-button" id="submit-button" value="Envoyer">
         </section><!-- message.section -->
     </form>
+    
 </body>
 </html>
