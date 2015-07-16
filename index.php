@@ -13,10 +13,8 @@
         }
     ?>
     <?php
-       require_once("upload_message.php");
-    ?>
-    <?php
-       require_once("chat.php");
+        require_once("upload_message.php");
+        require_once("chat.php");
     ?>
     <a href="deconnexion.php" id="logout">Deconnexion</a>
     <form action="index.php" method="post">
@@ -24,11 +22,11 @@
             <label>
                 Pseudo:
                 <?php
-                   $nickname = $_SESSION['login'];
-                    echo $nickname;            
+                   $login = $_SESSION['login'];
+                    echo $login;            
                 ?>
             </label>
-            <textarea rows="4" cols="50" placeholder="Saisissez votre message" id="message"></textarea>
+            <textarea rows="4" cols="50" placeholder="Saisissez votre message" name="message" id="message"></textarea>
             <input type="submit" name="submit-button" id="submit-button" value="Envoyer">
         </section><!-- message.section -->
     </form>

@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  127.0.0.1
--- Généré le :  Jeu 16 Juillet 2015 à 11:07
+-- Généré le :  Jeu 16 Juillet 2015 à 19:34
 -- Version du serveur :  5.6.17
 -- Version de PHP :  5.5.12
 
@@ -29,11 +29,20 @@ SET time_zone = "+00:00";
 CREATE TABLE IF NOT EXISTS `message` (
   `id_message` int(20) NOT NULL AUTO_INCREMENT,
   `message` text NOT NULL,
-  `date` date NOT NULL,
+  `date` datetime NOT NULL,
   `login_user` varchar(20) NOT NULL,
   PRIMARY KEY (`id_message`),
   KEY `login_user` (`login_user`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=10 ;
+
+--
+-- Contenu de la table `message`
+--
+
+INSERT INTO `message` (`id_message`, `message`, `date`, `login_user`) VALUES
+(7, 'salut', '2015-07-16 19:33:13', 'laurent'),
+(8, 'Bien ou bien?', '2015-07-16 19:33:31', 'michael'),
+(9, 'Coucou', '2015-07-16 19:33:51', 'hela');
 
 -- --------------------------------------------------------
 
@@ -47,6 +56,15 @@ CREATE TABLE IF NOT EXISTS `user` (
   `status` tinyint(1) NOT NULL,
   PRIMARY KEY (`login`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Contenu de la table `user`
+--
+
+INSERT INTO `user` (`login`, `password`, `status`) VALUES
+('hela', 'hela', 1),
+('laurent', 'laurent', 0),
+('michael', 'michael', 0);
 
 --
 -- Contraintes pour les tables exportées
