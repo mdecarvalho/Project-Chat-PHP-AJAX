@@ -27,7 +27,7 @@
                 ?>
             </label>
             <textarea rows="4" cols="50" placeholder="Saisissez votre message" name="message" id="message"></textarea>
-            <input type="submit" name="submit-button" id="submit-button" value="Envoyer">
+            <input type="submit" name="submit-button" class="submit-button" id="submit-button" value="Envoyer">
         </section><!-- message.section -->
     </form>
     <script src="js/jquery.js"></script>

@@ -6,13 +6,16 @@
     <link rel="stylesheet" type="text/css" href="css/main.css"/> 
 </head>
 <body>
-    <form action="verifLogin.php" method="post">
-        <label>Login:</label>
-        <input type="name" name="login"/><br>
-        <label>password:</label>
-        <input type="password" name="password"/><br>
-        <input type="submit" value="connexion"/>
-    </form>
+    <h1 class="login-title">GEEK MESSENGER</h1>
+    <div class="square-container">
+        <form action="verifLogin.php" method="post">
+            <label>LOGIN</label><br>
+            <input type="name" name="login" class="input-box"/><br>
+            <label>PASSWORD</label><br>
+            <input type="password" name="password" class="input-box"/><br>
+            <input type="submit" class="submit-button" value="LOGIN"/>
+        </form>
+    </div>
     <script src="js/jquery.js"></script>
     <script src="js/script.js"></script>
 </body>
