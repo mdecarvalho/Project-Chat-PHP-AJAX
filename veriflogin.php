@@ -1,4 +1,5 @@
 <?php
+require('connexion.php');
 // On démarre la session
 session_start();
 $loginOK = false;  
@@ -10,12 +11,12 @@ if ( isset($_POST) && (!empty($_POST['login'])) && (!empty($_POST['password'])) 
   extract($_POST);  // on verifie chaque clé pour savoir si elle a un nom de variable valide
 
   // On va chercher le mot de passe correspondant à ce login
-  $sql = "SELECT id_user, login, password, status FROM user WHERE login = '".addslashes($login)."'";
-  $req = mysql_query($sql) or die('Erreur SQL : <br />'.$sql);
+  $sql = "SELECT id_user, login, password, status FROM user WHERE login = 'hela'";
+  $req = mysqli_query($sql) or die('Erreur SQL : <br />'.$sql);
   
   // On vérifie que l'utilisateur existe bien
-  if (mysql_num_rows($req) > 0) {
-     $data = mysql_fetch_assoc($req);
+  if (mysqli_num_rows($req) > 0) {
+     $data = mysqli_fetch_assoc($req);
     
     // On vérifie que son mot de passe est correct
     if ($password == $data['password']) {
