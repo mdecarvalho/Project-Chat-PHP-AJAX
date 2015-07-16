@@ -1,11 +1,31 @@
 #message-section{
     position: relative;
-    top: 500px;   
+    top: 250px;   
     border: 1px solid black;
     line-height: 150px;
     height:150px;
+    width:650px;
+    padding: 20px;
+}
+
+#message-section div{
+    width:700px;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+#message-section textarea{
+    margin-left: 100px;
 }
 
 #message-section label{
+    position: absolute;
+    top: -45px;
+}
 
+#submit-button{
+    position: absolute;
+    margin-top: 65px;
+    margin-left: 10px;
+    margin-left: 10px;
 }
