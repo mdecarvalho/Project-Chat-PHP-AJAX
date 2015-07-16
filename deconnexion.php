@@ -1,8 +1,10 @@
     <?php
+    require_once('connexion.php');
     session_start();
+    $login = $_SESSION['login'];
+    $sql1="update user set status=0 where login='".$login."'";
+    $req1=mysqli_query($connect,$sql1); 
     session_unset();
     session_destroy();
     header('Location: login.php');
-    $sql= "update user set satus=0";
-    exit();
     ?>

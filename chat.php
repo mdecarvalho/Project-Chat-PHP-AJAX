@@ -14,3 +14,4 @@ while ($donnees = mysqli_fetch_assoc($requete))
 }
 
 mysqli_close($connect);
+?>
