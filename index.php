@@ -34,18 +34,23 @@
 
     <?php 
         require_once("upload_message.php");
+    session_start();
+    if($_SESSION['login'] == ''){
+        header ('location: login.php');
+    }   
     ?>
     <?php 
+        require_once("upload_message.php");
         require_once("chat.php");
     ?>
-    <a href="login.php" id="logout"></a>
+    <a href="deconnexion.php" id="logout">Deconnexion</a>
     <section id="message-section">
         <div>
             <form action="index.php" method="post">
                 <label>
                     Pseudo:
                     <?php
-                        session_start();
+
                         $nickname = $_SESSION['login'];
                         echo $nickname;            
                     ?>

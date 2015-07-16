@@ -1,4 +1,5 @@
 <?php
+session_start();
 require('connexion.php');
 // On démarre la session
 
@@ -31,7 +32,6 @@ if ( isset($_POST) && (!empty($_POST['login'])) && (!empty($_POST['password'])) 
 
 // Si le login a été validé on met les données en sessions
 if ($loginOK) {
-    session_start();
     $_SESSION['login'] = $data['login'];
     $_SESSION['statut'] = $data['status'];
     header ('location: index.php'); //redirection vers la page de tchat
