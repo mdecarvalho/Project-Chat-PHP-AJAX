@@ -21,6 +21,8 @@ if ( isset($_POST) && (!empty($_POST['login'])) && (!empty($_POST['password'])) 
     // On vérifie que son mot de passe est correct
     if ($password == $data['password']) {
       $loginOK = true;
+      $sql1="update user set status=1";
+      $req1=mysqli_query($connect,$sql1); 
     }
   }
 }
