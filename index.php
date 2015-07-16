@@ -6,6 +6,7 @@
     <link rel="stylesheet" type="text/css" href="css/main.css"/> 
 </head>
 <body>
+
     <?php
         // on teste les données du formulaire
         if (isset($_POST['nickname']) && isset($_POST['message'])) {
@@ -17,14 +18,19 @@
             mysql_query($sql) or die('Erreur d\'envoye de message'); 
         }
     ?>
+    
+    <?php 
+        require_once("chat.php");
+    ?>
     <section id="message-section">
         <div>
             <form action="index.php" method="post">
                 <label>
                     Pseudo:
                     <?php
-                        $nickname = "test";
-                        echo $nickname;            
+                        session_start();
+                        $pseudo = $_SESSION['login'];
+                        echo $pseudo;            
                     ?>
                 </label>
                 <textarea rows="4" cols="50" placeholder="Saisissez votre message" id="message" name="message"></textarea>

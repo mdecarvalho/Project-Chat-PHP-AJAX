@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  127.0.0.1
--- Généré le :  Mer 15 Juillet 2015 à 16:01
+-- Généré le :  Jeu 16 Juillet 2015 à 11:07
 -- Version du serveur :  5.6.17
 -- Version de PHP :  5.5.12
 
@@ -27,14 +27,13 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE IF NOT EXISTS `message` (
-  `id_msg` int(20) NOT NULL,
+  `id_message` int(20) NOT NULL AUTO_INCREMENT,
   `message` text NOT NULL,
   `date` date NOT NULL,
-  `id_user` int(11) NOT NULL,
-  PRIMARY KEY (`id_msg`),
-  KEY `id_user` (`id_user`),
-  KEY `id_user_2` (`id_user`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `login_user` varchar(20) NOT NULL,
+  PRIMARY KEY (`id_message`),
+  KEY `login_user` (`login_user`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -43,11 +42,10 @@ CREATE TABLE IF NOT EXISTS `message` (
 --
 
 CREATE TABLE IF NOT EXISTS `user` (
-  `id_user` int(20) NOT NULL,
   `login` varchar(20) NOT NULL,
-  `password` int(11) NOT NULL,
+  `password` varchar(20) NOT NULL,
   `status` tinyint(1) NOT NULL,
-  PRIMARY KEY (`id_user`)
+  PRIMARY KEY (`login`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -58,7 +56,7 @@ CREATE TABLE IF NOT EXISTS `user` (
 -- Contraintes pour la table `message`
 --
 ALTER TABLE `message`
-  ADD CONSTRAINT `message_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `user` (`id_user`);
+  ADD CONSTRAINT `message_ibfk_1` FOREIGN KEY (`login_user`) REFERENCES `user` (`login`);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
