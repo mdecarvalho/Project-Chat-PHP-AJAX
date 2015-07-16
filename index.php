@@ -31,9 +31,14 @@
             <INPUT type="submit" name="submit-button" id="submit-button" value="Envoyer">
         </section><!-- message.section -->
     </form>
+
+    <?php 
+        require_once("upload_message.php");
+    ?>
     <?php 
         require_once("chat.php");
     ?>
+    <a href="login.php" id="logout"></a>
     <section id="message-section">
         <div>
             <form action="index.php" method="post">
@@ -41,8 +46,8 @@
                     Pseudo:
                     <?php
                         session_start();
-                        $pseudo = $_SESSION['login'];
-                        echo $pseudo;            
+                        $nickname = $_SESSION['login'];
+                        echo $nickname;            
                     ?>
                 </label>
                 <textarea rows="4" cols="50" placeholder="Saisissez votre message" id="message" name="message"></textarea>
@@ -51,6 +56,9 @@
             </form>
         </div>
     </section><!-- message.section -->
+
+    <script src="js/jquery.js"></script>
+    <script src="js/script.js"></script>
 
 </body>
 </html>
