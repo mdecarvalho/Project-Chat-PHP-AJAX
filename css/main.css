@@ -1,0 +1,11 @@
+#message-section{
+    position: relative;
+    top: 500px;   
+    border: 1px solid black;
+    line-height: 150px;
+    height:150px;
+}
+
+#message-section label{
+
+}
