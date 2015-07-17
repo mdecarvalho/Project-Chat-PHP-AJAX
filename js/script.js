@@ -14,14 +14,23 @@ $(document).ready(function(){
     });
           function charger(){
               setTimeout( function(){
-                  // on lance une requête AJAX
+                  // on veut ajouter les nouveaux messages au début du bloc #messages
                   $.ajax({
                   url : "chat.php",
                   type : "POST",
                   success : function(html){
-                $('.chat-container').html(html); // on veut ajouter les nouveaux messages au début du bloc #messages
-            }
-        });
+                    $('.chat-container').html(html);  
+                     }
+                  });
+                      
+                  $.ajax({
+                  url : "display_user.php",
+                  type : "POST",
+                  success : function(html){
+                    $('.users').html(html);  
+                    }
+                  });
+        
 
         charger(); // on relance la fonction
     }, 1000); // on exécute le chargement toutes les 5 secondes

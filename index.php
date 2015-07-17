@@ -26,9 +26,11 @@
         <div class="display-user">
            <h3>Users online</h3>
            <hr>
+           <div class="users">
             <?php
                 require_once("display_user.php");
             ?>
+            </div>
         </div>
     </div>
 
