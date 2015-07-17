@@ -17,19 +17,14 @@
     ?>
     <div class="main-container">
         <div class="chat-container">
-            <?php
-                require_once("upload_message.php");
-                require_once("chat.php");
-            ?>
+            <img src="img/loader.gif" class="loader"></img>
         </div>
 
         <div class="display-user">
            <h3>Users online</h3>
            <hr>
            <div class="users">
-            <?php
-                require_once("display_user.php");
-            ?>
+               <img src="img/loader_2.gif" class="loader"></img>
             </div>
         </div>
     </div>

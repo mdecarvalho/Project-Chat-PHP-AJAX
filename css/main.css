@@ -177,3 +177,13 @@ html, body{
     width:17%;
     padding: 10px;
 }
+
+.chat-container .loader{
+    margin-left:464px;
+    margin-top: 150px
+}
+
+.display-user .loader{
+    margin-left:80px;
+    margin-top: 100px;
+}
