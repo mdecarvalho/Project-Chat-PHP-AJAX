@@ -6,30 +6,43 @@
     <link rel="stylesheet" type="text/css" href="css/main.css"/> 
 </head>
 <body>
+    <a href="deconnexion.php" id="logout">Logout</a>
     <?php
         session_start();
         if($_SESSION['login'] == ''){
             header('location: login.php');
         }
     ?>
-    <?php
-        require_once("upload_message.php");
-        require_once("chat.php");
-    ?>
-    <a href="deconnexion.php" id="logout">Deconnexion</a>
-    <form action="index.php" method="post">
-        <section id="message-section">
+    <div class="main-container">
+        <div class="chat-container">
+            <?php
+                require_once("upload_message.php");
+                require_once("chat.php");
+            ?>
+        </div>
+
+        <div class="display-user">
+           <h3>Users online</h2>
+           <hr>
+            <?php
+                require_once("display_user.php");
+            ?>
+        </div>
+    </div>
+
+    <section id="message-section">
+        <form action="index.php" method="post">
             <label>
-                Pseudo:
+                Nickname:
                 <?php
                    $login = $_SESSION['login'];
                     echo $login;            
                 ?>
             </label>
-            <textarea rows="4" cols="50" placeholder="Saisissez votre message" name="message" id="message"></textarea>
-            <input type="submit" name="submit-button" class="submit-button" id="submit-button" value="Envoyer">
-        </section><!-- message.section -->
-    </form>
+            <textarea rows="4" cols="50" placeholder="Type your message" name="message" id="message"></textarea>
+            <input type="submit" name="submit-button" class="submit-button" id="submit-button" value="Send">   
+        </form>
+    </section><!-- message.section -->
     <script src="js/jquery.js"></script>
     <script src="js/script.js"></script>
 </body>

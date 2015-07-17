@@ -8,7 +8,7 @@
     src: url('font/CaviarDreams-Italic.ttf');
 }
 @font-face {
-    font-family: "'CaviarDreams";
+    font-family: "CaviarDreams";
     font-weight: bold;
     src: url('font/CaviarDreams_Bold.ttf');
 }
@@ -55,7 +55,9 @@ html, body{
 
 .square-container input{
     margin: 10px  10px;
-    border-radius: 5px; 
+    border-radius: 5px;
+    padding: 5px 5px;
+    border: 2px solid #BDC3C7;
 }
 
 .input-box{
@@ -80,8 +82,7 @@ html, body{
 	-moz-border-radius:10px;
 	-webkit-border-radius:10px;
 	border-radius:10px;
-	border:1px solid #4e6096;
-
+    border: 2px solid #BDC3C7;
 	cursor:pointer;
 	color:#ffffff;
 	font-family:Arial;
@@ -110,35 +111,73 @@ html, body{
         Chat page
 **********************/
 
-#message-section{
-    position: relative;
-    top: 250px;   
-    border: 1px solid black;
+#message-section{  
     line-height: 150px;
-    height:150px;
-    width:650px;
+    height:100px;
+    width:1105px;
     padding: 20px;
+    border: 3px solid #BDC3C7;
+    background-color: white; 
+    margin: 0 auto;
+    
 }
 
 #message-section div{
+    position: relative;
     width:700px;
-    margin-left: 0px;
-    margin-right: 0px;
 }
 
 #message-section textarea{
-    margin-left: 100px;
+    margin: 0px 50px 20px 175px;
+    width: 750px;
 }
 
 #message-section label{
     position: absolute;
-    top: -45px;
+    margin-top: -65px;
+    font-size: 18px;
 }
 
 #submit-button{
     position: absolute;
-    margin-top: 65px;
-    margin-left: 10px;
-    margin-left: 10px;
-    width:150px;
+    width:100px;
+    padding: 5px 5px;
+    margin-top: 50px;
+}
+
+#logout{
+    text-decoration: none;
+    cursor: pointer;
+    color: white;
+    font-size: 25px;
+    margin-right: 50px;
+    margin-top: -80px;
+    position: absolute;
+    right:0px;
+    
+}
+.main-container{
+    width: 1150px;
+    margin: 0 auto;       
+    margin-top: 100px;
+    overflow: hidden;
+}
+
+.chat-container{
+    background-color: white;
+    width: 900px;
+    padding: 10px;
+    white-space: nowrap;
+    float: left;
+    border: 3px solid #BDC3C7;
+    height:350px;
+}
+
+.display-user{
+    background-color: white;
+    float: left;
+    border: 3px solid #BDC3C7;
+    height:350px;
+    width:200px;
+    padding: 10px;
 }
