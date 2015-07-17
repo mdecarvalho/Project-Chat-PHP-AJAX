@@ -16,7 +16,5 @@
             <input type="submit" class="submit-button" value="LOGIN"/>
         </form>
     </div>
-    <script src="js/jquery.js"></script>
-    <script src="js/script.js"></script>
 </body>
 </html>
