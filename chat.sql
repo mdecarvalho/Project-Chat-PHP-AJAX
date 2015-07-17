@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  127.0.0.1
--- Généré le :  Jeu 16 Juillet 2015 à 19:34
+-- Généré le :  Ven 17 Juillet 2015 à 16:05
 -- Version du serveur :  5.6.17
 -- Version de PHP :  5.5.12
 
@@ -33,16 +33,7 @@ CREATE TABLE IF NOT EXISTS `message` (
   `login_user` varchar(20) NOT NULL,
   PRIMARY KEY (`id_message`),
   KEY `login_user` (`login_user`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=10 ;
-
---
--- Contenu de la table `message`
---
-
-INSERT INTO `message` (`id_message`, `message`, `date`, `login_user`) VALUES
-(7, 'salut', '2015-07-16 19:33:13', 'laurent'),
-(8, 'Bien ou bien?', '2015-07-16 19:33:31', 'michael'),
-(9, 'Coucou', '2015-07-16 19:33:51', 'hela');
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=237 ;
 
 -- --------------------------------------------------------
 
@@ -63,8 +54,8 @@ CREATE TABLE IF NOT EXISTS `user` (
 
 INSERT INTO `user` (`login`, `password`, `status`) VALUES
 ('hela', 'hela', 1),
-('laurent', 'laurent', 0),
-('michael', 'michael', 0);
+('titi', 'titi', 0),
+('toto', 'toto', 1);
 
 --
 -- Contraintes pour les tables exportées
