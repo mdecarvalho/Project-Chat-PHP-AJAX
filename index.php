@@ -35,7 +35,7 @@
     </div>
 
     <section id="message-section">
-        <form action="index.php" method="post">
+        <form action="" method="post">
             <label>
                 Nickname:
                 <?php
