@@ -6,15 +6,21 @@
     require("connexion.php");
 
     //requête pour récupérer les 10 derniers messages
-    $sql = 'SELECT login_user, message, DATE_FORMAT(date, \'%d/%m/%Y at %Hh %imin %ss\') AS date_fr FROM message ORDER BY date';
-
+    $sql = 'SELECT login_user, message, DATE_FORMAT(date, \'%d/%m/%Y at %Hh %imin %ss\') AS date_fr FROM message ORDER BY date DESC LIMIT 10';
     //Envoi de la requête
     $requete = mysqli_query($connect, $sql) or die('Erreur affichage messages <br>'.$sql.'<br>'.mysql_error());
 
-    //Boucle pour afficher les messages 
-    while ($donnees = mysqli_fetch_assoc($requete))
-    {
-        echo '<p><strong>' . htmlspecialchars($donnees['login_user']) . '</strong>  ' . htmlspecialchars($donnees['date_fr']) . ' : ' . htmlspecialchars($donnees['message']) . '</p>';
+    //stockage dans tableau puis inversion pour avoir les 10 derniers messages
+    $tab = array();
+    while ($donnees = mysqli_fetch_assoc($requete)){
+        $tab[] = array('login_user' => $donnees['login_user'], 'date_fr' => $donnees['date_fr'], 'message' => $donnees['message']);
     }
+    $tab = array_reverse($tab);
+
+    //Boucle pour afficher les messages 
+    foreach($tab as $cle => $arr){
+        echo '<p><strong>' . htmlspecialchars($arr['login_user']) . '</strong>  ' . htmlspecialchars($arr['date_fr']) . ' : ' . htmlspecialchars($arr['message']) . '</p>';
+    }
+
     mysqli_close($connect);
 ?>
