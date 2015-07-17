@@ -22,7 +22,7 @@
         </div>
 
         <div class="display-user">
-           <h3>Users online</h2>
+           <h3>Users online</h3>
            <hr>
             <?php
                 require_once("display_user.php");
@@ -31,7 +31,7 @@
     </div>
 
     <section id="message-section">
-        <form action="index.php" method="post">
+        <form action="chatAjax.php" method="post">
             <label>
                 Nickname:
                 <?php

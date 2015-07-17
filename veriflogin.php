@@ -35,7 +35,7 @@
     if ($loginOK) {
         $_SESSION['login'] = $data['login'];
         $_SESSION['statut'] = $data['status'];
-        header ('location: index.php'); //redirection vers la page de tchat
+        header ('location: chatAjax.php'); //redirection vers la page de tchat
     }
     else {
         header ('location: login.php'); //redirection vers la page de login

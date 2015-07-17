@@ -6,8 +6,8 @@
     <link rel="stylesheet" type="text/css" href="css/main.css"/> 
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
       <script>
-            $('#envoi').click(function(e){
-            e.preventDefault(); // on empêche le bouton d'envoyer le formulaire
+            $('#submit-button').click(function(e){
+                e.preventDefault(); // on empêche le bouton d'envoyer le formulaire
             // on sécurise le message
             var message = encodeURIComponent( $('#message').val() );
             if(message != ""){ // on vérifie que le message n'est pas vide
@@ -23,8 +23,8 @@
               setTimeout( function(){
                   // on lance une requête AJAX
                   $.ajax({
-                  url : "upload_message.php",
-                  type : GET,
+                  url : "chat.php",
+                  type : "POST",
                   success : function(html){
                 $('#messages').prepend(html); // on veut ajouter les nouveaux messages au début du bloc #messages
             }
